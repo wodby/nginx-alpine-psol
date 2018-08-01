@@ -1,0 +1,19 @@
+language: bash
+
+services:
+  - docker
+
+script:
+  - docker build -t wodby/pagespeed ./
+  - docker cp wodby/pagespeed:/modpagespeed.tar.gz $PWD
+
+deploy:
+  - provider: releases
+    api_key: $GITHUB_ACCESS_TOKEN
+    overwrite: true
+    skip_cleanup: true
+    file_glob: true
+    file:
+      - modpagespeed.tar.gz
+    on:
+      tags: true
