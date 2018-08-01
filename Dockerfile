@@ -1,6 +1,6 @@
 FROM wodby/alpine:3.8-2.1.0
 
-ENV MOD_PAGESPEED_VER 1.13.35.2
+ENV MOD_PAGESPEED_TAG 1.13.35.2
 
 RUN apk add --no-cache \
         apache2-dev \
