@@ -51,4 +51,4 @@ RUN build/gyp_chromium --depth=. \
               -j`nproc` \
     ;
 
-RUN cd / && tar cvzf modpagespeed.tar.gz /usr/src/modpagespeed
+RUN cd / && tar czf modpagespeed.tar.gz /usr/src/modpagespeed
