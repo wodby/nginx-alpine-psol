@@ -5,7 +5,7 @@ services:
 
 script:
   - docker build -t wodby/pagespeed ./
-  - docker cp wodby/pagespeed:/modpagespeed.tar.gz $PWD
+  - docker run --rm -v $PWD:/tmp wodby/pagespeed sh -c "cp /modpagespeed.tar.gz /tmp/"
 
 deploy:
   - provider: releases
