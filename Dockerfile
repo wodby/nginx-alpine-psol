@@ -51,4 +51,16 @@ RUN build/gyp_chromium --depth=. \
               -j`nproc` \
     ;
 
-RUN cd / && tar czf modpagespeed.tar.gz /usr/src/modpagespeed
+RUN mkdir -p /psol/lib/Release/linux/x64; \
+    mkdir -p /psol/include/out/Release; \
+    \
+    cp -R out/Release/obj /psol/include/out/Release/; \
+    cp -R pagespeed/automatic/pagespeed_automatic.a /psol/lib/Release/linux/x64/; \
+    cp -R net \
+          pagespeed \
+          testing \
+          third_party \
+          url \
+          /psol/include/; \
+    \
+    tar czf psol.tar.gz /psol
