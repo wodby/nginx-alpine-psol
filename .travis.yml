@@ -3,9 +3,12 @@ language: bash
 services:
   - docker
 
+environment:
+  - ALPINE_VER=3.8
+
 script:
-  - docker build -t wodby/pagespeed ./
-  - docker run --rm -v $PWD:/tmp wodby/pagespeed sh -c "cp /usr/src/modpagespeed/psol.tar.gz /tmp/"
+  - docker build -t psol --build-arg ALPINE_VER="${ALPINE_VER}" ./
+  - docker run --rm -v $PWD:/tmp psol sh -c "cp /usr/src/modpagespeed/psol.tar.gz /tmp/"
 
 deploy:
   - provider: releases
