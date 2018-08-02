@@ -6,7 +6,6 @@ services:
 script:
   - docker build -t wodby/pagespeed ./
   - docker run --rm -v $PWD:/tmp wodby/pagespeed sh -c "cp /usr/src/modpagespeed/psol.tar.gz /tmp/"
-  - du -h psol.tar.gz
 
 deploy:
   - provider: releases
