@@ -3,7 +3,7 @@ language: bash
 services:
   - docker
 
-environment:
+env:
   - ALPINE_VER=3.8
 
 script:
