@@ -1,6 +1,4 @@
-ARG ALPINE_VER
-
-FROM alpine:${ALPINE_VER}
+FROM wodby/alpine:3.9-2.2.0
 
 ENV MOD_PAGESPEED_TAG v1.13.35.2
 
@@ -16,11 +14,10 @@ RUN apk add --no-cache \
         icu-dev \
         libjpeg-turbo-dev \
         libpng-dev \
-        libressl-dev \
+        openssl-dev \
         pcre-dev \
         py-setuptools \
-        zlib-dev \
-    ;
+        zlib-dev;
 
 WORKDIR /usr/src
 RUN git clone -b ${MOD_PAGESPEED_TAG} \
