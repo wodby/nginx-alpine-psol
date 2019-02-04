@@ -14,7 +14,7 @@ RUN apk add --no-cache \
         icu-dev \
         libjpeg-turbo-dev \
         libpng-dev \
-        openssl-dev \
+        libressl-dev \
         pcre-dev \
         py-setuptools \
         zlib-dev;
