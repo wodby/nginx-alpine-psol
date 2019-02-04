@@ -1,4 +1,4 @@
-FROM wodby/alpine:3.9-2.2.0
+FROM wodby/alpine:3.8-2.2.0
 
 ENV MOD_PAGESPEED_TAG v1.13.35.2
 
